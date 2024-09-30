@@ -1166,6 +1166,7 @@ pub fn show_precision_qualifier<F>(
 where
     F: Write + ?Sized,
 {
+    f.write_str("precision ")?;
     match **p {
         ast::PrecisionQualifierData::High => f.write_str("highp"),
         ast::PrecisionQualifierData::Medium => f.write_str("mediump"),
